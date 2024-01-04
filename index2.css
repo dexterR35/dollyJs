@@ -292,7 +292,12 @@ button {
 }
 
 .easy .frame {
-  background-image: url(./png/scene1/front-3.png);
+  background-image: url(./png/scene1/yellow-1.png);
+}
+.frame.frame1 {
+  transform: translate3d(20%, 10%, 3220px);
+  width: 30%;
+  height: 30%;
 }
 
 .easy .square {
@@ -625,3 +630,66 @@ body {
   background-position: center;
 }
 /*# sourceMappingURL=03_dolly.css.map */
+#dolly-cover {
+  background-image: url(./png/scene1/front-3.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: bottom;
+}
+.symbol {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  transform: translatex(-400px);
+}
+.symbol-center {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  transform: translatex(-200px);
+}
+
+.symbol.yellow {
+  transform: translatex(900px);
+}
+
+.btn {
+  padding: 1em 2em;
+  width: 30%;
+  background: orangered;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+.example {
+  border: unset !important;
+  background: rgba(0, 0, 0, 0.825);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80vh !important;
+  height: 50vh !important;
+  margin: 0 !important;
+}
+.example div {
+  width: 30%;
+  height: 30%;
+}
+.example div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 0.7em;
+}
+.examplse-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  color: lightgray;
+  margin-bottom: 40px;
+}

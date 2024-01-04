@@ -39,9 +39,3 @@
     init();
   });
 })();
-
-$("body").mousemove(function (e) {
-  var moveinX = (e.pageX * -1) / 100;
-  var moveinY = (e.pageY * -1) / 100;
-  $(this).css("background-position", moveinX + "px " + moveinY + "px ");
-});
