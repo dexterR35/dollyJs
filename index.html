@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@600&family=Palanquin:wght@300&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://www.dinoballiana.com/dolly/src/css/dolly.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://www.dinoballiana.com/dolly/src/js/dolly.min.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- DOLLY BASIC STRUCTURE -->
+
+    <!-- 01 - Navigation (optional) - needs class "dolly-navigation" -->
+    <!-- <header class="header dolly-navigation">
+      <h1 data-anchor="layer1" class="logo dolly-font dolly-anchor">dolly</h1>
+      <nav class="nav">
+        <ul>
+        
+          <li>
+            <button data-anchor="layer1" class="dolly-anchor">Layer 1</button>
+          </li>
+          <li>
+            <button data-anchor="layer2" class="dolly-anchor">Layer 2</button>
+          </li>
+          <li>
+            <button data-anchor="examples" class="dolly-anchor">
+              More examples
+            </button>
+          </li>
+          <li>
+            <a
+              href="https://www.dinoballiana.com/dolly/download/dolly_alpha_v01.zip"
+              class="btn download-btn bold"
+              >download</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header> -->
+
+    <!-- 02 - Container - needs class "dolly-container" -->
+    <div id="dolly-container" class="dolly-container">
+      <!-- 03 - Wrapper - needs class "dolly-wrap" -->
+      <div class="dolly-wrap">
+        <!-- 04 - Layers - needs class "dolly-layer" -->
+        <section id="layer1" class="dolly-layer" style="position: relative">
+          <div class="logo-wrap">
+            <!-- <h1 class="dolly-font">Screen 1</h1> -->
+            <h2 class="bold claim">.</h2>
+          </div>
+          <h1 class="bold" style="top: 40%; left: 60%; position: absolute">
+            Screen 1
+          </h1>
+
+          <div
+            id="wrappers"
+            class="container-img parallax"
+            style="
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <!-- <img
+              src="./png/scene1/yellow-1.png"
+              alt="yellow"
+              style="
+                width: 20%;
+                height: 20%;
+                object-fit: contain;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(90%, 120%);
+              "
+           
+            /> -->
+
+            <img
+              src="./png/scene1/zeus-2.png"
+              alt="zeus"
+              style="
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+                left: 50%;
+                top: 50%;
+                transform: translate(-65%, -60%);
+                position: absolute;
+              "
+            />
+          </div>
+          <span><img src="./png/scene1/front-3.png" alt="" /></span>
+        </section>
+
+        <section id="layer2" class="dolly-layer sc2">
+          <h3 class="bold">scene 2</h3>
+          <h4>
+            <a
+              class="text-medium bold"
+              target="_blank"
+              href="https://codepen.io/dinoBalliana/full/jOrOGOY"
+              >click</a
+            >
+          </h4>
+        </section>
+
+        <section id="examples" class="dolly-layer examples">
+          <h3 class="text-big bold">Scene 3</h3>
+          <h4>
+            <a
+              class="text-medium bold"
+              target="_blank"
+              href="https://codepen.io/dinoBalliana/full/jOrOGOY"
+              >click</a
+            >
+          </h4>
+          <!-- <div class="examples-wrap">
+            <article class="example">
+              <h4>
+                <a
+                  class="text-medium bold"
+                  target="_blank"
+                  href="https://codepen.io/dinoBalliana/full/wvGVVOr"
+                  >Website</a
+                >
+              </h4>
+            </article>
+            <article class="example">
+              <h4>
+                <a
+                  class="text-medium bold"
+                  target="_blank"
+                  href="https://codepen.io/dinoBalliana/full/jOrOGOY"
+                  >Basic usage</a
+                >
+              </h4>
+            </article>
+            <article class="example">
+              <h4>
+                <a
+                  class="text-medium bold"
+                  target="_blank"
+                  href="https://codepen.io/dinoBalliana/full/e8680626640cc0c6e9ae81bb0a90d57f"
+                  >Complete usage</a
+                >
+              </h4>
+            </article>
+            <article class="example more">
+              <h4>
+                <a class="text-medium bold" href="javascript:void(0);"
+                  >More to come!</a
+                >
+              </h4>
+            </article>
+          </div> -->
+        </section>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"
+      integrity="sha512-vnmn/Qqn6aG0POAc9mIGzjq0IybrvxJXYDafNvp9JSnDGxeF3pbkSqLvf+YGd5ku63pT7sa/jxHn7/d0mU8+tA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
