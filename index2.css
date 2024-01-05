@@ -195,7 +195,7 @@ img {
   top: 2%;
   left: 0%;
   position: relative;
-  transform: translateZ(100px);
+  /* transform: translateZ(100px); */
 }
 
 .custom .isometric-plane {
@@ -394,11 +394,15 @@ body {
 }
 /*# sourceMappingURL=03_dolly.css.map */
 #dolly-cover {
-  background-image: url(./png/scene1/front-3.png);
+  /* background-image: url(./png/scene1/front-3.png); */
   background-size: cover;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-position: 0 100px;
+}
+.img-cover {
+  bottom: 0;
+  position: absolute;
 }
 .symbol {
   width: 100%;
@@ -509,11 +513,12 @@ body {
 
 .easy .code-wrap {
   /* transform: translateZ(1000px); */
-  justify-content: space-between;
   width: 230%;
+  /* background-color: red; */
+  /* height: 40%; */
 }
 .symbol.cloud {
-  top: 55%;
+  top: 40%;
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
