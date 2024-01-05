@@ -390,6 +390,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=03_dolly.css.map */
 #dolly-cover {
@@ -429,6 +430,8 @@ body {
 .square.complete .contents {
   width: 100%;
   height: 100%;
+  /* transform: translate3d(0%, 0%, 0px); */
+  position: absolute;
 }
 .square {
   transform-style: preserve-3d;
