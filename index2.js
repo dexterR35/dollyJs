@@ -55,10 +55,9 @@
     (t = "click" == n.touchClick ? 0 : 0.08),
       (n.dolly = new Dolly(document.getElementById("dolly"), {
         ease: t,
-        perspective: 2400,
-        distance: 2000,
-        // distance: 3000,
-        fullpage: false,
+        perspective: 2000,
+        distance: 2400,
+        fullpage: true,
         delay: 1000,
         duration: 800,
         onlyAnchors: !1,
@@ -69,21 +68,7 @@
       window.addEventListener("resize", s),
       s();
   }
-  // document.addEventListener("scroll", function () {
-  //   try {
-  //     // Get the scroll position
-  //     var scrollPosition = window.scrollY;
 
-  //     // Set the background size based on the scroll position
-  //     var newSize = 100 + scrollPosition / 5; // You can adjust the division factor to control the speed of the effect
-  //     document.body.style.backgroundSize = newSize + "%";
-
-  //     console.log("Scroll Position: ", scrollPosition);
-  //     console.log("New Background Size: ", newSize + "%");
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // });
   function s() {
     if (window.innerWidth < 991)
       for (let t = 0; t < n.mobileBtn.length; t++)
@@ -92,11 +77,7 @@
       for (let t = 0; t < n.mobileBtn.length; t++)
         n.mobileBtn[t].removeEventListener(n.touchClick, i);
   }
-  // function i() {
-  //   n.hasClass(document.body, "on-menu")
-  //     ? (n.dolly.blockScroll(!1), n.removeClass(document.body, "on-menu"))
-  //     : (n.dolly.blockScroll(!0), n.addClass(document.body, "on-menu"));
-  // }
+
   document.addEventListener("DOMContentLoaded", function (t) {
     e();
   });
@@ -106,4 +87,38 @@
 //   var moveinX = (e.pageX * -1) / 100;
 //   var moveinY = (e.pageY * -1) / 100;
 //   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
+//   $(this).css("background-attachment", "fixed");
+// });
+
+// function toggleCustomDiv() {
+//   if ($("body").hasClass("on-examples")) {
+//     $(".last-div").addClass("visible");
+//   } else {
+//     $(".last-div").removeClass("visible");
+//   }
+// }
+
+// // Create a new MutationObserver
+// var observer = new MutationObserver(function (mutations) {
+//   mutations.forEach(function (mutation) {
+//     if (mutation.attributeName === "class") {
+//       toggleCustomDiv();
+//     }
+//     console.log(mutation.attributeName === "class");
+//   });
+// });
+
+// // Start observing the body for attribute changes
+// observer.observe(document.body, {
+//   attributes: true, //configure it to listen to attribute changes
+// });
+
+// toggleCustomDiv();
+// $(".symbol").mousemove(function (e) {
+//   // Calculate the movement based on the mouse position
+//   var moveinX = (e.pageX * -1) / 100;
+//   var moveinY = (e.pageY * -1) / 100;
+
+//   // Apply the CSS transform property to move the image
+//   $(this).css("transform", "translate(" + moveinX + "px, " + moveinY + "px)");
 // });

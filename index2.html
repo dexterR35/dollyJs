@@ -8,13 +8,6 @@
       href="https://www.dinoballiana.com/dolly/src/css/dolly.min.css"
       rel="stylesheet"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://www.dinoballiana.com/dolly/src/js/dolly.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -22,68 +15,72 @@
       <div class="dolly-wrap">
         <section id="dolly-cover" class="dolly-layer dolly-cover">
           <div class="square complete">
-            <img
-              src="./png/scene1/zeus-2.png"
-              alt=""
-              style="position: absolute"
-              class="symbol-center"
-            />
-            <div class="content-wrap">
-              <div class="logo-wrap">
-                <!-- <img src="./png/scene1/zeus-2.png" alt="" /> -->
-                <h2 class="bold claim">!</h2>
-              </div>
+            <div class="contents">
+              <img
+                src="./png/scene1/zeus-2.png"
+                alt="zeus"
+                class="symbol-center"
+              />
             </div>
-            <!-- <img src="./png/scene1/yellow-1.png" alt="" class="symbol" /> -->
-          </div>
-        </section>
-
-        <section id="easy" class="dolly-layer easy">
-          <div class="frame frame1"></div>
-          <div class="square">
-            <h3 class="text-big bold title">Light & Easy!</h3>
-            <p class="text-medium">Only 6 KB pakage and no JQuery needed</p>
             <div class="code-wrap">
               <img
                 src="./png/scene1/yellow-1.png"
-                alt=""
+                alt="yellow"
                 class="symbol yellow"
               />
-              <img src="./png/scene1/mid-5.png" alt="" />
             </div>
           </div>
         </section>
+        <!--first symbol blue-->
+        <section id="easy" class="dolly-layer easy">
+          <div class="frame frame1">
+            <img src="./png/scene1/blue-0.png" alt="blue" class="symbol blue" />
+          </div>
+          <div class="square">
+            <div class="code-wrap">
+              <img src="./png/scene1/mid-5.png" alt="" class="symbol cloud" />
+            </div>
+          </div>
+          <h3 class="text-big bold title scene2">Welcome</h3>
+        </section>
 
         <section id="custom" class="dolly-layer custom">
-          <div class="frame">sfasf</div>
+          <div class="frame">
+            <img src="./png/scene1/symbol-4.png" alt="" class="symbol green" />
+          </div>
+          <div class="frame2">
+            <img src="./png/scene1/mid-5.png" alt="" class="symbol cloud" />
+          </div>
           <div class="isometric-plane">
-            <div class="user"></div>
             <div id="simulation-wrap" class="layer-wrap regular">
               <div class="layer"></div>
               <div class="layer"></div>
               <div class="layer"></div>
             </div>
           </div>
-          <h3 class="text-big bold title">Fully customizable</h3>
           <div class="control-panel">
-            <img src="./png/scene1/logo_7.png" alt="" />
-
-            <img src="./png/scene1/logo_7.png" alt="" />
+            <img src="./png/scene1/logo_7.png" alt="" class="symbol logo" />
           </div>
         </section>
-        <section id="examples" class="dolly-layer examples">
+        <section id="examples" class="dolly-layer examples last-div">
           <div class="examplse-wrap">
             <article class="example">
               <div>
                 <img src="./png/scene1/pragmatic_6.png" alt="pragmatic_6" />
+                <button class="btn">Continua</button>
               </div>
             </article>
-            <button class="btn">Continua</button>
           </div>
           <footer>NetBet Casino</footer>
         </section>
       </div>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"
@@ -91,6 +88,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://www.dinoballiana.com/dolly/src/js/dolly.min.js"></script>
     <script src="./index2.js"></script>
   </body>
 </html>

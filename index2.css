@@ -1,34 +1,14 @@
 *,
-:after,
-:before {
+*::after,
+*::before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
-}
-
 img {
   max-width: 100%;
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-button {
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=01_reset.css.map */
 
 ::-moz-selection {
   background: #ff7474;
@@ -36,14 +16,6 @@ button {
 
 ::selection {
   background: #ff7474;
-}
-
-.bold {
-  font-family: Palanquin Dark, sans-serif;
-}
-
-.dolly-font {
-  font-family: Righteous, sans-serif;
 }
 
 .text-small {
@@ -72,32 +44,12 @@ button {
   }
 }
 
-.light {
-  background-color: #ff7474;
-}
-
-.dark {
-  background-color: #fff;
-}
-
 .btn {
   padding: 5px 25px;
   border-radius: 30px;
   text-decoration: none;
   margin: 10px;
   display: block;
-}
-
-.btn.dark {
-  color: #000;
-}
-
-.btn.light {
-  color: #fff;
-}
-
-.btn.light:hover {
-  background-color: #000;
 }
 
 @media (max-width: 778px) {
@@ -126,12 +78,12 @@ button {
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 6px dashed #000;
+  /* border: 6px dashed #000; */
 }
 
 @media (max-width: 778px) {
   .dolly-layer .square {
-    border: 5px dashed #000;
+    /* border: 5px dashed #000; */
   }
 }
 
@@ -141,7 +93,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 8px dashed #000;
+  /* border: 8px dashed #000; */
 }
 
 @media (max-width: 778px) {
@@ -215,7 +167,7 @@ button {
 }
 
 .dolly-cover .content-wrap {
-  position: relative;
+  position: absolute;
   width: 50%;
   max-width: 500px;
   display: flex;
@@ -252,7 +204,7 @@ button {
 }
 
 .dolly-cover .content-wrap .logo-wrap .claim {
-  color: #000;
+  color: orangered;
   position: absolute;
   font-size: 2vw;
   bottom: -24px;
@@ -291,25 +243,6 @@ button {
   }
 }
 
-.easy .frame {
-  background-image: url(./png/scene1/yellow-1.png);
-}
-.frame.frame1 {
-  transform: translate3d(20%, 10%, 3220px);
-  width: 30%;
-  height: 30%;
-}
-
-.easy .square {
-  text-align: center;
-  /* background-color: #fff; */
-}
-
-.easy .text-big,
-.easy .text-medium {
-  color: #000;
-}
-
 @media (max-width: 778px) {
   .easy .text-big {
     padding-bottom: 50px;
@@ -327,37 +260,11 @@ button {
 }
 
 .easy .code-wrap {
-  transform: translateZ(200px);
+  transform: translateZ(1000px);
   display: flex;
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
-}
-
-.easy .code-wrap xmp {
-  padding: 35px 30px;
-  margin: 30px 0 0;
-  font-size: 18px;
-  width: 49%;
-}
-
-@media (max-width: 1200px) {
-  .easy .code-wrap xmp {
-    width: 100%;
-  }
-}
-
-@media (max-width: 778px) {
-  .easy .code-wrap xmp {
-    font-size: 14px;
-    padding: 15px 20px;
-  }
-}
-
-.custom .frame {
-  width: 40%;
-  height: 32%;
-  background-image: url(./png//scene1/front-3.png);
 }
 
 .custom .text-big {
@@ -373,11 +280,11 @@ button {
 }
 
 .custom .control-panel {
-  display: flex;
-  width: 87%;
-  justify-content: center;
-  align-items: flex-start;
-  transform: translateZ(200px);
+  width: 20%;
+  top: -10%;
+  left: 0%;
+  position: relative;
+  transform: translateZ(800px);
 }
 
 .custom .control-panel xmp {
@@ -467,24 +374,6 @@ button {
   animation: regular 5s ease infinite;
 }
 
-@-webkit-keyframes regular {
-  0% {
-    transform: translateZ(0);
-  }
-
-  50% {
-    transform: translateZ(800px);
-  }
-
-  55% {
-    transform: translateZ(800px);
-  }
-
-  to {
-    transform: translateZ(0);
-  }
-}
-
 @keyframes regular {
   0% {
     transform: translateZ(0);
@@ -537,14 +426,6 @@ button {
   border: 8px dashed #ff7474;
 }
 
-.examples .examplse-wrap .example a {
-  text-decoration: none;
-}
-
-.examples .examplse-wrap .example a:hover {
-  color: #ff7474;
-}
-
 @media (max-width: 991px) {
   .examples .examplse-wrap .example {
     width: 100%;
@@ -581,8 +462,6 @@ button {
   color: #ff7474;
   text-decoration: none;
 }
-
-/*# sourceMappingURL=02_index.css.map */
 
 .dolly-container {
   position: fixed;
@@ -624,7 +503,7 @@ button {
 
 body {
   background-image: url(./png/scene2/bk.jpg);
-  background-size: cover;
+  background-size: 105%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -637,26 +516,99 @@ body {
   /* background-attachment: fixed; */
   background-position: bottom;
 }
-.symbol {
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
-  transform: translatex(-400px);
+
+.easy .square {
+  position: absolute;
+  transform: translate3d(-0%, 23%, 216px);
 }
-.symbol-center {
-  width: 90%;
-  height: 90%;
+.title.scene2 {
+  filter: drop-shadow(1px 2px 2px black);
+  color: orangered;
+  position: absolute;
+  font-size: 5vw;
+  top: 57%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 920px);
+  z-index: 2;
+}
+.square.complete .code-wrap {
+  /* background-color: purple; */
+  position: absolute;
+  width: fit-content;
+  max-width: 30%;
+  height: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(100%, 0%, 500px);
+}
+.custom .frame {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 4500px);
+  height: 100%;
+  width: 100%;
+
+  /* background-color: yellow; */
+}
+.square.complete .contents {
+  width: 100%;
+  height: 100%;
+}
+.custom .frame2 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  height: 100%;
+  width: 170%;
+  transform: translate3d(-50%, -50%, 3600px);
+}
+.frame.frame1 {
+  transform: translate3d(30%, 0%, 3420px);
+  width: 26%;
+  height: 36%;
+}
+.symbol {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  transform: translatex(-200px);
+}
+.symbol.blue {
+  transform: rotate(60deg);
 }
 
 .symbol.yellow {
-  transform: translatex(900px);
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* background-color: red; */
+}
+
+.symbol.green {
+  transform: rotate(10deg);
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  left: 3%;
+  top: 24%;
+}
+.symbol.cloud {
+  top: 42%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.symbol-center {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translatex(-16vw);
 }
 
 .btn {
   padding: 1em 2em;
-  width: 30%;
+  width: 100%;
   background: orangered;
   font-weight: bold;
   color: white;
@@ -665,7 +617,7 @@ body {
 }
 .example {
   border: unset !important;
-  background: rgba(0, 0, 0, 0.825);
+  /* background: rgba(0, 0, 0, 0.825); */
   border-radius: 10px;
   padding: 20px;
   width: 80vh !important;
