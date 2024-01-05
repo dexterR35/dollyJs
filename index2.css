@@ -52,12 +52,6 @@ img {
   display: block;
 }
 
-@media (max-width: 778px) {
-  .header .logo {
-    font-size: 40px;
-  }
-}
-
 .dolly-layer .square {
   width: 100%;
   height: 90vh;
@@ -69,20 +63,14 @@ img {
   /* border: 6px dashed #000; */
 }
 
-@media (max-width: 778px) {
-  .dolly-layer .square {
-    /* border: 5px dashed #000; */
-  }
-}
-
-.dolly-layer .square.complete:after,
+/* .dolly-layer .square.complete:after,
 .dolly-layer .square.complete:before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  /* border: 8px dashed #000; */
-}
+
+} */
 
 @media (max-width: 778px) {
   .dolly-layer .square.complete:after,
@@ -91,67 +79,32 @@ img {
   }
 }
 
-.dolly-layer .square.complete:after {
+/* .dolly-layer .square.complete:after {
   width: 95%;
   height: 95%;
   transform: translate3d(-50%, -50%, -200px);
-}
+} */
 
-@media (max-width: 778px) {
+/* @media (max-width: 778px) {
   .dolly-layer .square.complete:after {
     width: 100%;
     height: 100%;
     transform: translate3d(-50%, -50%, -500px);
     background-color: #fff;
   }
-}
+} */
 
-.dolly-layer .square.complete:before {
+/* .dolly-layer .square.complete:before {
   width: 90%;
   height: 90%;
   transform: translate3d(-50%, -50%, -500px);
-  /* background-color: #fff; */
-}
+
+} */
 
 @media (max-width: 778px) {
   .dolly-layer .square.complete:before {
     display: none;
   }
-}
-
-.dolly-layer xmp {
-  position: relative;
-  background-color: #000;
-  border-radius: 15px;
-  color: #ff7474;
-  text-align: left;
-}
-
-.dolly-layer xmp:before {
-  position: absolute;
-  top: -35px;
-  left: 25px;
-  color: #fff;
-  background-color: #ff7474;
-  font-size: 30px;
-  width: auto;
-  padding: 0 15px;
-  text-align: center;
-  font-family: Palanquin Dark, sans-serif;
-}
-
-@media (max-width: 778px) {
-  .dolly-layer xmp:before {
-    font-size: 18px;
-  }
-}
-
-.dolly-layer xmp.html:before {
-  content: "HTML";
-}
-
-.dolly-layer xmp.js:before {
-  content: "JS";
 }
 
 .dolly-cover .content-wrap {
@@ -191,14 +144,14 @@ img {
   }
 }
 
-.dolly-cover .content-wrap .logo-wrap .claim {
+/* .dolly-cover .content-wrap .logo-wrap .claim {
   color: orangered;
   position: absolute;
   font-size: 2vw;
   bottom: -24px;
   right: 50%;
   transform: translate3d(50%, 0, 0);
-}
+} */
 
 @media (max-width: 778px) {
   .dolly-cover .content-wrap .logo-wrap .claim {
@@ -353,7 +306,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 8px dashed #ff7474;
+  /* border: 8px dashed #ff7474; */
 }
 
 @media (max-width: 991px) {
