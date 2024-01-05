@@ -56,7 +56,7 @@
       (n.dolly = new Dolly(document.getElementById("dolly"), {
         ease: t,
         perspective: 2000,
-        distance: 2400,
+        distance: 2000,
         fullpage: true,
         delay: 1000,
         duration: 800,
@@ -83,12 +83,12 @@
   });
 })();
 
-// $("body").mousemove(function (e) {
-//   var moveinX = (e.pageX * -1) / 100;
-//   var moveinY = (e.pageY * -1) / 100;
-//   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
-//   $(this).css("background-attachment", "fixed");
-// });
+$("body").mousemove(function (e) {
+  var moveinX = (e.pageX * -1) / 100;
+  var moveinY = (e.pageY * -1) / 100;
+  $(this).css("background-position", moveinX + "px " + moveinY + "px ");
+  $(this).css("background-attachment", "fixed");
+});
 
 // function toggleCustomDiv() {
 //   if ($("body").hasClass("on-examples")) {
