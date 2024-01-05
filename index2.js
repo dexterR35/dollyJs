@@ -56,10 +56,10 @@
       (n.dolly = new Dolly(document.getElementById("dolly"), {
         ease: t,
         perspective: 2000,
-        distance: 2000,
+        distance: 2200,
         fullpage: true,
-        delay: 1000,
-        duration: 800,
+        delay: 500,
+        duration: 500,
         onlyAnchors: !1,
         bodyClass: !0,
         threshold: 10,
@@ -84,11 +84,49 @@
 })();
 
 $("body").mousemove(function (e) {
-  var moveinX = (e.pageX * -1) / 100;
-  var moveinY = (e.pageY * -1) / 100;
+  var moveinX = (e.pageX * -1) / 80;
+  var moveinY = (e.pageY * -1) / 80;
   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
   $(this).css("background-attachment", "fixed");
 });
+
+var b = document.getElementsByTagName("BODY")[0];
+
+b.addEventListener("mousemove", function (event) {
+  parallaxed(event);
+});
+
+function parallaxed(e) {
+  var amountMovedX = (e.clientX * -0.3) / 30;
+  var amountMovedY = (e.clientY * -0.3) / 30;
+  var x = document.getElementsByClassName("parallaxed");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.transform =
+      "translate(" + amountMovedX + "px," + amountMovedY + "px)";
+  }
+}
+
+// let header = document.querySelector("header");
+// let firstWoman = document.getElementById("first-woman");
+// let firstMan = document.getElementById("first-man");
+// let secondWoman = document.getElementById("second-woman");
+// let escalator = document.getElementById("escalator");
+// let secondMan = document.getElementById("second-man");
+
+// window.addEventListener("scroll", function () {
+//   let value = window.scrollY;
+//   header.style.top = value * 0.5 + "px";
+//   firstWoman.style.top = value * 0.75 + "px";
+//   firstWoman.style.left = value * -0.5 + "px";
+//   firstMan.style.top = value * 0.25 + "px";
+//   firstMan.style.left = value * 0.5 + "px";
+//   secondWoman.style.top = value * 0.25 + "px";
+//   secondWoman.style.left = value * -0.5 + "px";
+//   escalator.style.top = value * 0.5 + "px";
+//   secondMan.style.top = value * 0.35 + "px";
+//   secondMan.style.left = value * -0.25 + "px";
+// });
 
 // function toggleCustomDiv() {
 //   if ($("body").hasClass("on-examples")) {

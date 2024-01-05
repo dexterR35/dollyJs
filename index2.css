@@ -406,7 +406,7 @@ body {
 }
 .easy .square {
   position: absolute;
-  transform: translate3d(-0%, 23%, 220px);
+  transform: translate3d(0%, 43%, -100px);
 }
 
 .square.complete .code-wrap {
@@ -505,9 +505,9 @@ body {
 }
 
 .easy .code-wrap {
-  transform: translateZ(1000px);
+  /* transform: translateZ(1000px); */
   justify-content: space-between;
-  width: 200%;
+  width: 230%;
 }
 .symbol.cloud {
   top: 55%;
