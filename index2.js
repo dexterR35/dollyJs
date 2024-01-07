@@ -61,7 +61,7 @@
         ease: t,
         perspective: 3000,
         distance: distance,
-        fullpage: true,
+        fullpage: false,
         delay: 900,
         duration: 1000,
         onlyAnchors: !1,
