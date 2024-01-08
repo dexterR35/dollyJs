@@ -191,11 +191,11 @@ img {
 }
 
 .easy .control-panel {
-  width: 28%;
-  top: 2%;
+  width: 18%;
+  top: 0%;
   left: 0%;
   position: relative;
-  /* transform: translateZ(100px); */
+  transform: translateZ(100px);
 }
 
 .custom .isometric-plane {
@@ -273,12 +273,6 @@ img {
   to {
     transform: translateZ(0);
   }
-}
-
-.examples .frame {
-  width: 40%;
-  height: 32%;
-  background-image: url(./png//scene1/front-3.png);
 }
 
 .examples .text-medium {
@@ -389,7 +383,7 @@ body {
   background-size: 105%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  /* background-position: center; */
   scroll-behavior: smooth;
 }
 /*# sourceMappingURL=03_dolly.css.map */
@@ -434,7 +428,7 @@ body {
 .square.complete .contents {
   width: 100%;
   height: 100%;
-  /* transform: translate3d(0%, 0%, 0px); */
+  transform: translate3d(0%, 0%, 0px);
   position: absolute;
 }
 .square {
@@ -452,34 +446,46 @@ body {
   z-index: -1;
 }
 .frame.frame0 {
-  position: absolute;
-  transform: translate3d(135%, 20%, 200px);
-  width: fit-content;
-  height: 25%;
+  transform: translate3d(77%, 20%, 233px);
+  height: fit-content;
+  width: 15%;
 }
 .frame.frame1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate3d(70%, -0%, 1350px);
+  transform: translate3d(25%, -0%, 850px);
+  /* background-color: #000; */
   width: fit-content;
-  height: 25%;
+  /* height: 25%; */
+}
+.frame.frame1 .blue-paralax {
+  height: fit-content;
+  width: 35%;
+  /* background-color: red; */
 }
 
 .frame.frame2 {
   position: absolute;
-  top: 5%;
-  left: 17%;
-  transform: translate3d(-50%, -50%, 2000px);
+  top: -19%;
+  left: 8%;
+  transform: translate3d(-50%, -50%, 1246px);
   z-index: -1;
-  width: 25%;
+  width: 15%;
+  height: 27%;
 }
-
+.green-paralax {
+  width: 100%;
+  height: 100%;
+}
+/* .symbol-center {
+  display: none;
+} */
 .symbol-center {
   width: 110%;
   height: 110%;
   object-fit: contain;
-  transform: translatex(-10vw);
+  transform: translatex(-10vw) translateY(-7vh);
 }
 
 .symbol.yellow {
@@ -518,7 +524,7 @@ body {
   /* height: 40%; */
 }
 .symbol.cloud {
-  top: 40%;
+  top: 45%;
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -561,4 +567,12 @@ body {
 footer {
   color: lightgray;
   margin-bottom: 40px;
+}
+
+.front-title {
+  font-family: sans;
+  font-weight: 2em;
+  position: absolute;
+  z-index: 2;
+  transform: translate3d(0%, 0%, 1220px);
 }

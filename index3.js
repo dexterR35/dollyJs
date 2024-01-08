@@ -74,17 +74,17 @@
           const scrollThreshold = 3000;
           const scrollThreshold2 = 5600;
           console.log(index);
-          if (index === 2) {
-            document.body.style.backgroundImage =
-              'url("./png/scene2/bk-2.jpg")';
-            n.dolly.fullpage = true;
-          } else {
-            n.dolly.fullpage = false;
-          }
-          if (index === 4) {
-            document.body.style.backgroundImage =
-              'url("./png/scene3/bk-3.jpg")';
-          }
+          // if (index === 2) {
+          //   document.body.style.backgroundImage =
+          //     'url("./png/scene2/bk-2.jpg")';
+          //   n.dolly.fullpage = true;
+          // } else {
+          //   n.dolly.fullpage = false;
+          // }
+          // if (index === 4) {
+          //   document.body.style.backgroundImage =
+          //     'url("./png/scene3/bk-3.jpg")';
+          // }
         },
         onResize: function (prev, index, scroll) {},
       })),
