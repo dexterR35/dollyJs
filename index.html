@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index2.css" />
+    <link rel="stylesheet" href="./index.css" />
     <link
       href="https://www.dinoballiana.com/dolly/src/css/dolly.min.css"
       rel="stylesheet"
@@ -14,18 +14,38 @@
     <main role="main" id="dolly_first" class="dolly-container">
       <div class="dolly-wrap">
         <section id="dolly-cover" class="dolly-layer dolly-cover">
-          <img src="./png/scene1/front-3.png" alt="towers" class="img-cover" />
-          <h1 class="front-title">WELCOME</h1>
+          <div class="div-title">
+            <h1 class="front-title" style="will-change: transform">
+              <div class="first-title">
+                <span> Descoperă jocurile</span>
+                <img
+                  src="./png/scene1/pragmatic_6.png"
+                  alt="prag"
+                  class="title-img"
+                />
+              </div>
+              <div>și câștigă XXX rotiri gratuite</div>
+              <p>scroll pentru a continua</p>
+            </h1>
+          </div>
+          <img
+            src="./png/scene1/front-3.png"
+            alt="towers"
+            class="img-cover parallax"
+          />
+
           <div class="square complete">
             <div class="contents parallax">
-              <img
-                src="./png/scene1/zeus-2.png"
-                alt="zeus"
-                class="symbol-center"
-              />
+              <div class="zeus-wrap">
+                <img
+                  src="./png/scene1/zeus-2.png"
+                  alt="zeus"
+                  class="symbol-center"
+                />
+              </div>
             </div>
             <div class="frame frame0">
-              <div class="rev-parallax" style="position: relative">
+              <div class="parallax" style="position: relative">
                 <img
                   src="./png/scene1/yellow-1.png"
                   alt="yellow"
@@ -44,9 +64,15 @@
             </div>
           </div>
         </section>
+
         <section id="easy" class="dolly-layer easy">
           <div class="control-panel _c_logo">
-            <img src="./png/scene1/logo_7.png" alt="" class="symbol logo" />
+            <h2 class="title-s2 parallax">Luptă-te cu zeii Olimpului în</h2>
+            <img
+              src="./png/scene1/logo_7.png"
+              alt=""
+              class="symbol logo parallax"
+            />
           </div>
 
           <div class="square">
@@ -54,7 +80,7 @@
               <img src="./png/scene1/mid-5.png" alt="" class="symbol cloud" />
             </div>
             <div class="frame frame2">
-              <div class="green-paralax rev-parallax">
+              <div class="green-paralax parallax">
                 <img
                   src="./png/scene1/symbol-4.png"
                   alt="green"
@@ -67,11 +93,8 @@
         <section id="examples" class="dolly-layer examples last-div">
           <div class="examplse-wrap">
             <article class="example">
-              <div>
-                <h2>Last text</h2>
-                <img src="./png/scene1/pragmatic_6.png" alt="pragmatic_6" />
-                <button class="btn">Continua</button>
-              </div>
+              <h2 class="title-s3">Vezi următoarea lume</h2>
+              <button class="btn">Continuă</button>
             </article>
           </div>
           <footer>NetBet Casino</footer>
@@ -93,6 +116,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://www.dinoballiana.com/dolly/src/js/dolly.min.js"></script>
-    <script src="./index2.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

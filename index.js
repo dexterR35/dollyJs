@@ -62,32 +62,39 @@
       perspective: 1700,
       distance: distance,
       fullpage: true,
-      lockScroll: true,
-      delay: 1200,
-      duration: 1000,
+      lockScroll: false,
+      delay: 1000,
+      duration: 700,
       onlyAnchors: !1,
       bodyClass: true,
       threshold: 10,
       activeMenu: !0,
       onReady: function () {},
       onScroll: function (index, scroll, direction, limit) {
-        console.log(scroll);
-        // let zeus = document.querySelector(".contents");
+        console.log(index);
 
-        // let _towers = document.querySelector(".img-cover");
+        if (scroll >= 1100) {
+          $(".title-s2").css("opacity", "1");
+        } else {
+          $(".title-s2").css("opacity", "0");
+        }
+
+        if (scroll >= 2400) {
+          $(".example").css("opacity", "1");
+        } else {
+          $(".example").css("opacity", "0");
+        }
+
+        const lastSceneIndex = 2;
+        if (index >= lastSceneIndex) {
+          this.lockScroll = true;
+          console.log("sgfafda");
+        } else {
+          // this.lockScroll = false;
+        }
+        // console.log(index);
         // let _c_cloud = document.querySelector("._c_cloud");
-        // let _c_logo = document.querySelector("._c_logo");
-        // if (scroll < 3000) {
-        //   zeus.style.transition = "transform 0.05s linear";
-        //   zeus.style.transform = `translate3d(0%, 0%, ${scroll * 1.4}px)`;
-        //   _c_logo.style.transform = `translateZ(${scroll / 2}px)`;
-        //   _c_cloud.style.bottom = -scroll / 140 + "%";
-        //   _towers.style.transition = "transform 0.2s linear";
-        //   // _towers.style.bottom = -scroll / 60 + "%";
-        // } else {
-        //   // zeus.style.left = 0 + "px";
-        //   // zeus.style.transform = `translate3d(0%, 0%, 0)`;
-        // }
+        // _c_cloud.style.bottom = -scroll / 140 + "%";
       },
       onChange: function (prev, index, scroll) {},
       onResize: function (prev, index, scroll) {},
@@ -110,17 +117,17 @@
 })();
 
 $("body").mousemove(function (e) {
-  var moveinX = (e.pageX * -1) / 500;
-  var moveinY = (e.pageY * -1) / 500;
+  var moveinX = (e.pageX * -1) / 100;
+  var moveinY = (e.pageY * -1) / 100;
   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
-  $(this).css("background-attachment", "fixed");
+  // $(this).css("background-attachment", "fixed");
 });
 
 var b = document.getElementsByTagName("BODY")[0];
 
 b.addEventListener("mousemove", function (event) {
-  parallaxMovement(event, "parallax", -0.3);
-  parallaxMovement(event, "rev-parallax", 0.3);
+  parallaxMovement(event, "parallax", 1);
+  // parallaxMovement(event, "rev-parallax", -2.3);
 });
 
 function parallaxMovement(e, className, directionMultiplier) {
