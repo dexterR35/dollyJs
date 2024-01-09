@@ -53,11 +53,11 @@
     mobileBtn: document.querySelectorAll(".mobile-btn"),
   };
 
-  function e() {
+  function e(elementId) {
     let t;
-    let distance = 1800;
+    let distance = 1900;
     (t = "click" == n.touchClick ? 0.08 : 0.08), console.log(t, "t");
-    (n.dolly = new Dolly(document.getElementById("dolly_first"), {
+    (n.dolly = new Dolly(document.getElementById(elementId), {
       ease: t,
       perspective: 1700,
       distance: distance,
@@ -95,12 +95,7 @@
       window.addEventListener("resize", s),
       s();
   }
-  document
-    .getElementById("switchToSecondButton")
-    .addEventListener("click", function () {
-      $("#dolly_first").css("display", "none");
-      $("#dolly_second").css("display", "block");
-    });
+
   function s() {
     if (window.innerWidth < 991)
       for (let t = 0; t < n.mobileBtn.length; t++)
@@ -109,10 +104,34 @@
       for (let t = 0; t < n.mobileBtn.length; t++)
         n.mobileBtn[t].removeEventListener(n.touchClick, i);
   }
+
+  $("#testClick").on("click", function () {
+    // Fade out and zoom out dolly_first
+    $("#dolly_first").fadeOut("slow", function () {
+      $(this).css("transform", "scale(2.8)"); // Zoom out
+    });
+
+    // Delay for 1 second before executing the code inside setTimeout
+    setTimeout(function () {
+      // Hide dolly_first after the delay
+      $("#dolly_first").hide();
+
+      // Fade in and zoom in dolly_second
+      $("#dolly_second").fadeIn("slow", function () {
+        $(this).css("transform", "scale(1)"); // Zoom in
+      });
+
+      // Change the Dolly element ID when the button is clicked
+      e("dolly_second");
+    }, 1000); // 1000 milliseconds = 1 second
+  });
   document.addEventListener("DOMContentLoaded", function (t) {
-    e();
+    // e();
+    e("dolly_first");
   });
 })();
+
+// Example button click event
 
 // $("body").mousemove(function (e) {
 //   var moveinX = (e.pageX * -1) / 100;
