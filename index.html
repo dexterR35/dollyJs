@@ -11,13 +11,13 @@
     <title>NetBet Casino</title>
   </head>
   <body>
-    <main role="main" id="dolly_first" class="dolly-container">
+    <div role="main" id="dolly_first" class="dolly-container">
       <div class="dolly-wrap">
         <section id="dolly-cover" class="dolly-layer dolly-cover">
           <div class="div-title">
             <h1 class="front-title" style="will-change: transform">
               <div class="first-title">
-                <span> Descoperă jocurile</span>
+                <span>Descoperă jocurile </span>
                 <img
                   src="./png/scene1/pragmatic_6.png"
                   alt="prag"
@@ -90,17 +90,133 @@
             </div>
           </div>
         </section>
+
         <section id="examples" class="dolly-layer examples last-div">
           <div class="examplse-wrap">
             <article class="example">
               <h2 class="title-s3">Vezi următoarea lume</h2>
-              <button class="btn">Continuă</button>
+              <button class="btn" id="switchToSecondButton">Continuă</button>
             </article>
           </div>
           <footer>NetBet Casino</footer>
         </section>
       </div>
-    </main>
+    </div>
+
+    <div role="main" id="dolly_second" class="dolly-container">
+      <img
+        src="./png/scene2/cloudSky.png"
+        alt="cloudsSky"
+        style="position: absolute"
+        class="cloudsSky"
+      />
+      <div class="dolly-wrap dolly-part2">
+        <section id="scene1" class="section dolly-layer">
+          <div class="layer">
+            <img
+              src="./png/scene2/front-side.png"
+              alt="front"
+              class="img-front _img parallax"
+            />
+          </div>
+          <div class="elements c_heart c_">
+            <img
+              src="./png/scene2/heart.png"
+              alt="heart"
+              class="heart parallax"
+            />
+          </div>
+          <div class="elements c_start c_">
+            <img src="./png/scene2/start.png" alt="star" class="parallax" />
+          </div>
+        </section>
+        <section id="scene2" class="section dolly-layer">
+          <div class="layer back-scene">
+            <img
+              src="./png/scene2/back-side2.png"
+              alt="front"
+              class="img-back _img parallax"
+            />
+          </div>
+          <div class="elements">
+            <div class="c_space c_">
+              <img
+                src="./png/scene2/spaceship.png"
+                alt="space"
+                class="parallax"
+              />
+            </div>
+            <div class="c_redB c_">
+              <img
+                src="./png/scene2/red_bear.png"
+                alt="red bear"
+                class="parallax"
+              />
+            </div>
+            <div class="c_purpleB c_">
+              <img
+                src="./png/scene2/purple_bear.png"
+                alt="purple bear"
+                class="parallax"
+              />
+            </div>
+          </div>
+        </section>
+        <section id="scene3" class="section dolly-layer">
+          <div class="layer">
+            <img src="./png/scene2/g_logo2.png" alt="logo" class="logo" />
+          </div>
+        </section>
+        <section id="scene4" class="section dolly-layer">
+          <div class="layer">
+            <h2>continua</h2>
+            <button class="btn">continua</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div role="main" id="dolly_third" class="dolly-container">
+      <div class="dolly-wrap dolly-part3">
+        <section id="p3scene1" class="section dolly-layer">
+          <div class="layer">
+            <img
+              src="./png/scene3/girl.png"
+              alt="front"
+              class="img-front _img parallax"
+            />
+          </div>
+        </section>
+        <section id="p3scene2" class="section dolly-layer">
+          <div class="layer front-scene">
+            <img
+              src="./png/scene3/front.png"
+              alt="front"
+              class="img-front _img parallax"
+            />
+          </div>
+          <div class="layer boy">
+            <div class="c_boy c_">
+              <img src="./png/scene3/boy.png" alt="boy" class="parallax" />
+            </div>
+          </div>
+        </section>
+        <section id="p3scene3" class="section dolly-layer">
+          <div class="layer">
+            <img
+              src="./png/scene3/gameLogo.png"
+              alt="logo"
+              class="logo parallax"
+            />
+          </div>
+        </section>
+        <section id="p3scene4" class="section dolly-layer">
+          <div class="layer">
+            <h2>continua</h2>
+            <button class="btn">continua</button>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"

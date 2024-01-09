@@ -62,39 +62,32 @@
       perspective: 1700,
       distance: distance,
       fullpage: true,
-      lockScroll: false,
+      lockScroll: true,
       delay: 1000,
-      duration: 700,
+      duration: 800,
       onlyAnchors: !1,
       bodyClass: true,
       threshold: 10,
       activeMenu: !0,
       onReady: function () {},
       onScroll: function (index, scroll, direction, limit) {
-        console.log(index);
+        console.log(scroll);
 
         if (scroll >= 1100) {
           $(".title-s2").css("opacity", "1");
         } else {
           $(".title-s2").css("opacity", "0");
         }
-
         if (scroll >= 2400) {
           $(".example").css("opacity", "1");
         } else {
           $(".example").css("opacity", "0");
         }
-
-        const lastSceneIndex = 2;
-        if (index >= lastSceneIndex) {
-          this.lockScroll = true;
-          console.log("sgfafda");
-        } else {
-          // this.lockScroll = false;
-        }
-        // console.log(index);
-        // let _c_cloud = document.querySelector("._c_cloud");
-        // _c_cloud.style.bottom = -scroll / 140 + "%";
+        // n.dolly.destroy();
+        // let cloudsSky = document.querySelector(".cloudsSky");
+        // let scrollPosition = scroll;
+        // let newPosition = -scrollPosition * 0.1;
+        // cloudsSky.style.transform = `translateX(${newPosition}px)`;
       },
       onChange: function (prev, index, scroll) {},
       onResize: function (prev, index, scroll) {},
@@ -102,7 +95,12 @@
       window.addEventListener("resize", s),
       s();
   }
-
+  document
+    .getElementById("switchToSecondButton")
+    .addEventListener("click", function () {
+      $("#dolly_first").css("display", "none");
+      $("#dolly_second").css("display", "block");
+    });
   function s() {
     if (window.innerWidth < 991)
       for (let t = 0; t < n.mobileBtn.length; t++)
@@ -116,12 +114,12 @@
   });
 })();
 
-$("body").mousemove(function (e) {
-  var moveinX = (e.pageX * -1) / 100;
-  var moveinY = (e.pageY * -1) / 100;
-  $(this).css("background-position", moveinX + "px " + moveinY + "px ");
-  // $(this).css("background-attachment", "fixed");
-});
+// $("body").mousemove(function (e) {
+//   var moveinX = (e.pageX * -1) / 100;
+//   var moveinY = (e.pageY * -1) / 100;
+//   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
+//   // $(this).css("background-attachment", "fixed");
+// });
 
 var b = document.getElementsByTagName("BODY")[0];
 

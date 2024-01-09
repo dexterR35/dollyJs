@@ -323,11 +323,11 @@ img {
 }
 
 body {
-  background-image: url(./png/scene2/bk.jpg);
+  background-image: url(./png/scene1/bk-1.jpg);
   background-size: 105%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: 0 -170px;
   /* background-position: -50px -50px; */
   /* transition: all 0.1s ease; */
   scroll-behavior: smooth;
@@ -613,4 +613,189 @@ footer {
     /* background: red; */
     max-width: 200%;
   }
+}
+
+/*********SCENE 2*************/
+/*********SCENE 2*************/
+/*********SCENE 2*************/
+/*********SCENE 2*************/
+
+.layer {
+  position: absolute;
+  bottom: 0;
+}
+
+.dolly-part2 .layer .img-front {
+  max-width: 107%;
+  position: relative;
+  left: -4%;
+  bottom: -3px;
+}
+.elements {
+  height: 35%;
+}
+.c_ img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#scene1 .c_heart {
+  position: absolute;
+  bottom: 12%;
+  left: 30%;
+  transform: translate3d(0%, 0%, 800px);
+}
+
+#scene1 .c_start {
+  transform: translate3d(150%, -90%, 430px);
+  height: 20%;
+}
+#scene1 .heart {
+  width: 80% !important;
+  height: 80% !important;
+}
+.elements {
+  transform-style: preserve-3d;
+}
+
+#scene2 .layer {
+  width: 215%;
+  bottom: -4%;
+  left: -53%;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+#scene2 .elements {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#scene2 .c_ {
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+#scene2 .c_redB {
+  width: 30%;
+  left: 0;
+  top: 0;
+  transform: translate3d(0%, -100%, 150px);
+  height: 30%;
+}
+
+#scene2 .c_purpleB {
+  width: 60%;
+  /* background-color: red; */
+  transform: translate3d(80%, -150%, -800px);
+  height: 25%;
+  left: 0;
+  top: 0;
+}
+#scene2 .c_space {
+  width: 50%;
+  /* background-color: red; */
+  transform: translate3d(-75%, -50%, 545px) rotate(-5deg);
+  z-index: 2;
+  height: 50%;
+}
+.back-scene {
+  /* transform: translate3d(0%, 0%, 530px); */
+}
+
+#scene3 .layer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0%, 0%, 430px);
+}
+#scene3 .layer img {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+}
+
+#scene4 .layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: blue; */
+  width: 100%;
+  height: 100%;
+}
+
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+
+/*********SCENE 3*************/
+/*********SCENE 3*************/
+/*********SCENE 3*************/
+/*********SCENE 3*************/
+
+#p3scene1 .layer {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  left: -14%;
+}
+#p3scene1 .layer img {
+  width: 37%;
+  height: 35%;
+}
+#p3scene2 .layer.boy {
+  bottom: -40%;
+  left: 3%;
+}
+
+#p3scene2 .front-scene {
+  width: 210%;
+  /* height: 140%; */
+  display: flex;
+  bottom: -53%;
+}
+#p3scene2 .front-scene img {
+  width: 100%;
+  position: relative;
+  left: -1%;
+}
+#p3scene3 .layer {
+  bottom: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#p3scene3 .logo {
+  width: 70%;
+  height: 50%;
+  object-fit: contain;
+}
+#p3scene4 .layer {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: unset;
+}
+.c_boy img {
+  width: 70%;
+  height: 70%;
+}
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+/*********end SCENE 2*************/
+
+#dolly_second,
+#dolly_third {
+  display: none;
 }
