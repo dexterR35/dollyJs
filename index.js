@@ -53,9 +53,43 @@
     mobileBtn: document.querySelectorAll(".mobile-btn"),
   };
 
+  const scrollHandlers = {
+    dolly_first: function (scroll) {
+      // console.log(limit);
+      if (scroll >= 1100) {
+        $(".title-s2").css("opacity", "1");
+      } else {
+        $(".title-s2").css("opacity", "0");
+      }
+      if (scroll >= 2400) {
+        $(".example").css("opacity", "1");
+      }
+    },
+    dolly_second: function (scroll) {
+      let cloudsSky = document.querySelector(".cloudsSky");
+      let spaceship = document.querySelector(".c_space");
+
+      if (scroll >= 1100) {
+        spaceship.style.top = 50 - scroll / 100 + "%";
+      } else {
+        spaceship.style.top = 50 - scroll / 100 + "%";
+      }
+
+      cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
+    },
+    dolly_third: function (scroll) {},
+  };
+
   function e(dollyId) {
     let t;
-    let distance = 2000;
+    let distance = 1800;
+
+    let onScrollHandler = scrollHandlers[dollyId];
+    if (!onScrollHandler) {
+      console.error("Handler de onScroll nu a fost definit pentru " + dollyId);
+      return;
+    }
+
     (t = "click" == n.touchClick ? 0.08 : 0.08), console.log(t, "t");
     (n.dolly = new Dolly(document.getElementById(dollyId), {
       ease: t,
@@ -71,20 +105,9 @@
       activeMenu: !0,
       onReady: function () {},
       onScroll: function (index, scroll, direction, limit) {
-        console.log(limit);
-        if (scroll >= 1100) {
-          $(".title-s2").css("opacity", "1");
-        } else {
-          $(".title-s2").css("opacity", "0");
-        }
-        if (scroll >= 2400) {
-          $(".example").css("opacity", "1");
-        }
-        let cloudsSky = document.querySelector(".cloudsSky");
-        cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
+        onScrollHandler(scroll);
       },
       onChange: function (prev, index, scroll) {
-        // Update logo transformation based on scroll
         console.log(
           `Section changed from ${prev} to ${index}. Current scroll position: ${scroll}`
         );
@@ -106,8 +129,7 @@
 
   $("#testClick").on("click", function () {
     $("#dolly_first").fadeOut("slow", function () {
-      $(this).css("transform", "scale(1.8)");
-
+      // $(this).css("transform", "scale(1.8)");
       $(".changeBg").animate({ opacity: 0 }, "slow", function () {
         $(this).css("background-image", "url('./png/scene2/bk-2.jpg')");
         $(this).animate({ opacity: 1 }, "slow");
@@ -119,18 +141,20 @@
       $("#dolly_second").fadeIn("slow", function () {
         $(this).css("transform", "scale(1)");
       });
-
       e("dolly_second");
     }, 1000);
   });
   $("#testClick2").on("click", function () {
     $("#dolly_second").fadeOut("slow", function () {
-      $(this).css("transform", "scale(2.8)");
+      $(".changeBg").animate({ opacity: 0 }, "slow", function () {
+        $(this).css("background-image", "url('./png/scene3/bk-3.jpg')");
+        $(this).animate({ opacity: 1 }, "slow");
+      });
     });
     setTimeout(function () {
       $("#dolly_second").hide();
       $("#dolly_third").fadeIn("slow", function () {
-        $(this).css("transform", "scale(1)");
+        // $(this).css("transform", "scale(1)");
       });
       e("dolly_third");
     }, 1000);
@@ -153,38 +177,46 @@
       }
     });
 
-    // If there are no images, hide the splash screen
+    // no images, hide the splash screen
     if (loadedCount === images.length) {
       hideSplashScreen();
     }
   }
 
   function showSplashScreen() {
-    // Display splash screen
     const splashScreen = document.getElementById("splashScreen");
     splashScreen.style.display = "flex";
-
-    // Wait for 1.5 seconds (1500 milliseconds)
     setTimeout(() => {
       checkImagesLoaded();
     }, 1500);
   }
 
   function hideSplashScreen() {
-    // Hide splash screen
     const splashScreen = document.getElementById("splashScreen");
     splashScreen.style.display = "none";
   }
 
-  // Call the function to show the splash screen
   showSplashScreen();
   document.addEventListener("DOMContentLoaded", function (t) {
     // e();
     e("dolly_first");
+    var b = document.getElementsByTagName("BODY")[0];
+
+    b.addEventListener("mousemove", function (event) {
+      parallaxMovement(event, "parallax", 1);
+    });
+
+    function parallaxMovement(e, className, directionMultiplier) {
+      var amountMovedX = (e.clientX * directionMultiplier) / 30;
+      var amountMovedY = (e.clientY * directionMultiplier) / 30;
+      var elements = document.getElementsByClassName(className);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.transform =
+          "translate(" + amountMovedX + "px," + amountMovedY + "px)";
+      }
+    }
   });
 })();
-
-// Example button click event
 
 // $("body").mousemove(function (e) {
 //   var moveinX = (e.pageX * -1) / 100;
@@ -192,20 +224,3 @@
 //   $(this).css("background-position", moveinX + "px " + moveinY + "px ");
 //   // $(this).css("background-attachment", "fixed");
 // });
-
-var b = document.getElementsByTagName("BODY")[0];
-
-b.addEventListener("mousemove", function (event) {
-  parallaxMovement(event, "parallax", 1);
-  // parallaxMovement(event, "rev-parallax", -2.3);
-});
-
-function parallaxMovement(e, className, directionMultiplier) {
-  var amountMovedX = (e.clientX * directionMultiplier) / 30;
-  var amountMovedY = (e.clientY * directionMultiplier) / 30;
-  var elements = document.getElementsByClassName(className);
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].style.transform =
-      "translate(" + amountMovedX + "px," + amountMovedY + "px)";
-  }
-}
