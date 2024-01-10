@@ -116,45 +116,25 @@ img {
   }
 }
 
-.dolly-cover .content-wrap .download-wrap {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate3d(-50%, 105%, 0);
-  text-align: center;
-}
-
-@media (max-width: 991px) {
-  .dolly-cover .content-wrap .download-wrap {
-    transform: translate3d(-50%, 140%, 0);
-    width: 90%;
-  }
-}
-
-.dolly-cover .content-wrap .download-wrap .version {
-  color: #000;
-}
-
-@media (max-height: 650px) {
-  .dolly-cover .content-wrap .download-wrap .version {
-    display: none;
-  }
-}
-
-@media (max-width: 778px) {
-  .easy .text-big {
-    padding-bottom: 50px;
-  }
-}
-
 .easy .control-panel {
   width: 35%;
-  top: -4%;
+  top: -20%;
   left: 0%;
   position: relative;
-  transform: translate3d(0%, 0%, 100px);
+  transform: translate3d(0%, 0%, -100px);
 }
-
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Adjust background color as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 .custom .isometric-plane {
   position: absolute;
   perspective: 800px;
@@ -332,7 +312,13 @@ body {
   /* transition: all 0.1s ease; */
   scroll-behavior: smooth;
 }
-
+/* .ChangeBg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+} */
 @media (max-width: 991px) {
   body {
     background-size: cover;

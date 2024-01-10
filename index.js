@@ -53,11 +53,11 @@
     mobileBtn: document.querySelectorAll(".mobile-btn"),
   };
 
-  function e(elementId) {
+  function e(dollyId) {
     let t;
-    let distance = 1900;
+    let distance = 2000;
     (t = "click" == n.touchClick ? 0.08 : 0.08), console.log(t, "t");
-    (n.dolly = new Dolly(document.getElementById(elementId), {
+    (n.dolly = new Dolly(document.getElementById(dollyId), {
       ease: t,
       perspective: 1700,
       distance: distance,
@@ -71,8 +71,7 @@
       activeMenu: !0,
       onReady: function () {},
       onScroll: function (index, scroll, direction, limit) {
-        console.log(scroll);
-
+        console.log(limit);
         if (scroll >= 1100) {
           $(".title-s2").css("opacity", "1");
         } else {
@@ -80,16 +79,16 @@
         }
         if (scroll >= 2400) {
           $(".example").css("opacity", "1");
-        } else {
-          $(".example").css("opacity", "0");
         }
-        // n.dolly.destroy();
-        // let cloudsSky = document.querySelector(".cloudsSky");
-        // let scrollPosition = scroll;
-        // let newPosition = -scrollPosition * 0.1;
-        // cloudsSky.style.transform = `translateX(${newPosition}px)`;
+        let cloudsSky = document.querySelector(".cloudsSky");
+        cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
       },
-      onChange: function (prev, index, scroll) {},
+      onChange: function (prev, index, scroll) {
+        // Update logo transformation based on scroll
+        console.log(
+          `Section changed from ${prev} to ${index}. Current scroll position: ${scroll}`
+        );
+      },
       onResize: function (prev, index, scroll) {},
     })),
       window.addEventListener("resize", s),
@@ -106,25 +105,79 @@
   }
 
   $("#testClick").on("click", function () {
-    // Fade out and zoom out dolly_first
     $("#dolly_first").fadeOut("slow", function () {
-      $(this).css("transform", "scale(2.8)"); // Zoom out
+      $(this).css("transform", "scale(1.8)");
+
+      $(".changeBg").animate({ opacity: 0 }, "slow", function () {
+        $(this).css("background-image", "url('./png/scene2/bk-2.jpg')");
+        $(this).animate({ opacity: 1 }, "slow");
+      });
     });
 
-    // Delay for 1 second before executing the code inside setTimeout
     setTimeout(function () {
-      // Hide dolly_first after the delay
       $("#dolly_first").hide();
-
-      // Fade in and zoom in dolly_second
       $("#dolly_second").fadeIn("slow", function () {
-        $(this).css("transform", "scale(1)"); // Zoom in
+        $(this).css("transform", "scale(1)");
       });
 
-      // Change the Dolly element ID when the button is clicked
       e("dolly_second");
-    }, 1000); // 1000 milliseconds = 1 second
+    }, 1000);
   });
+  $("#testClick2").on("click", function () {
+    $("#dolly_second").fadeOut("slow", function () {
+      $(this).css("transform", "scale(2.8)");
+    });
+    setTimeout(function () {
+      $("#dolly_second").hide();
+      $("#dolly_third").fadeIn("slow", function () {
+        $(this).css("transform", "scale(1)");
+      });
+      e("dolly_third");
+    }, 1000);
+  });
+  function checkImagesLoaded() {
+    const images = document.querySelectorAll("img");
+    let loadedCount = 0;
+
+    images.forEach((img) => {
+      if (img.complete) {
+        loadedCount++;
+        console.log(loadedCount);
+      } else {
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === images.length) {
+            hideSplashScreen();
+          }
+        };
+      }
+    });
+
+    // If there are no images, hide the splash screen
+    if (loadedCount === images.length) {
+      hideSplashScreen();
+    }
+  }
+
+  function showSplashScreen() {
+    // Display splash screen
+    const splashScreen = document.getElementById("splashScreen");
+    splashScreen.style.display = "flex";
+
+    // Wait for 1.5 seconds (1500 milliseconds)
+    setTimeout(() => {
+      checkImagesLoaded();
+    }, 1500);
+  }
+
+  function hideSplashScreen() {
+    // Hide splash screen
+    const splashScreen = document.getElementById("splashScreen");
+    splashScreen.style.display = "none";
+  }
+
+  // Call the function to show the splash screen
+  showSplashScreen();
   document.addEventListener("DOMContentLoaded", function (t) {
     // e();
     e("dolly_first");
