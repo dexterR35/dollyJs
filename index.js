@@ -68,16 +68,22 @@
     dolly_second: function (scroll) {
       let cloudsSky = document.querySelector(".cloudsSky");
       let spaceship = document.querySelector(".c_space");
-
-      if (scroll >= 1100) {
+      if (scroll >= 2400) {
         spaceship.style.top = 50 - scroll / 100 + "%";
+        $(".second_title").css("opacity", "1");
       } else {
         spaceship.style.top = 50 - scroll / 100 + "%";
+        $(".second_title").css("opacity", "0");
       }
-
       cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
     },
-    dolly_third: function (scroll) {},
+    dolly_third: function (scroll) {
+      if (scroll >= 2400) {
+        $(".second_title").css("opacity", "1");
+      } else {
+        $(".second_title").css("opacity", "0");
+      }
+    },
   };
 
   function e(dollyId) {

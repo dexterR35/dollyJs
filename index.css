@@ -377,14 +377,6 @@ body {
   vertical-align: middle;
   transform: translateY(13.6px);
 }
-.title-s2 {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  margin-bottom: -0.6em;
-  font-size: 5em;
-  text-transform: uppercase;
-  line-height: 1;
-}
 
 .example {
   opacity: 0;
@@ -562,7 +554,7 @@ body {
   display: flex;
   justify-content: end;
   position: absolute;
-  left: -14%;
+  /* left: -14%; */
 }
 #p3scene1 .layer img {
   width: 37%;
@@ -658,6 +650,7 @@ body {
 }
 #scene3 .layer:nth-child(1) {
   transform: translate3d(0%, 0%, 430px);
+  flex-direction: column;
 }
 
 #scene3 .layer:nth-child(2) {
@@ -671,8 +664,32 @@ body {
 #scene4 .layer:nth-child(2) {
   transform: translate3d(80%, 70%, 0px);
 }
+
+#scene4 .layer:nth-child(3) img {
+  width: 120% !important;
+  height: 120% !important;
+}
 #scene4 .layer:nth-child(3) {
   transform: translate3d(-160%, -160%, -4900px);
 }
 
 /*********END extra layers PART 1*************/
+
+._title,
+._Ltitle {
+  /* opacity: 1; */
+  font-size: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  font-weight: bold;
+  filter: drop-shadow(2px 2px 2px black);
+}
+._title {
+  opacity: 0;
+}
+.title-s2 {
+  transition: opacity 0.2s ease;
+  margin-bottom: -0.6em;
+}
