@@ -643,6 +643,10 @@ body {
   width: 70%;
   height: 70%;
 }
+
+#testClick2 {
+  margin-top: 1em;
+}
 /*********end SCENE 2*************/
 /*********end SCENE 2*************/
 /*********end SCENE 2*************/
@@ -715,9 +719,20 @@ body {
   height: 120% !important;
 }
 #scene4 .layer:nth-child(3) {
-  transform: translate3d(-160%, -160%, -4900px);
+  transform: translate3d(-160%, -120%, -4900px);
 }
-
+#p3scene4 .layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.btn {
+  border: 0;
+  outline: 0;
+  padding: 0.8em 2em;
+}
 /*********END extra layers PART 1*************/
 
 ._title,
@@ -732,6 +747,9 @@ body {
   filter: drop-shadow(2px 2px 2px black);
 }
 ._title {
+  opacity: 0;
+}
+.p4Title {
   opacity: 0;
 }
 .title-s2 {

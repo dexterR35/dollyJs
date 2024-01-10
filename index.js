@@ -77,7 +77,7 @@
       cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
     },
     dolly_third: function (scroll) {
-      if (scroll >= 2400) {
+      if (scroll >= 1400) {
         $(".second_title").css("opacity", "1");
       } else {
         $(".second_title").css("opacity", "0");
@@ -88,6 +88,7 @@
   function e(dollyId) {
     let t;
     let onScrollHandler = scrollHandlers[dollyId];
+
     if (!onScrollHandler) {
       console.error("onScroll nu a fost definit pentru " + dollyId);
       return;
