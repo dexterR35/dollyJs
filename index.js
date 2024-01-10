@@ -55,7 +55,6 @@
 
   const scrollHandlers = {
     dolly_first: function (scroll) {
-      // console.log(limit);
       if (scroll >= 1100) {
         $(".title-s2").css("opacity", "1");
       } else {
@@ -88,11 +87,9 @@
 
   function e(dollyId) {
     let t;
-    let distance = 1800;
-
     let onScrollHandler = scrollHandlers[dollyId];
     if (!onScrollHandler) {
-      console.error("Handler de onScroll nu a fost definit pentru " + dollyId);
+      console.error("onScroll nu a fost definit pentru " + dollyId);
       return;
     }
 
@@ -100,7 +97,7 @@
     (n.dolly = new Dolly(document.getElementById(dollyId), {
       ease: t,
       perspective: 1700,
-      distance: distance,
+      distance: 1800,
       fullpage: true,
       lockScroll: true,
       delay: 1000,
@@ -109,7 +106,9 @@
       bodyClass: true,
       threshold: 10,
       activeMenu: !0,
-      onReady: function () {},
+      onReady: function (index) {
+        console.log(index, "onready");
+      },
       onScroll: function (index, scroll, direction, limit) {
         onScrollHandler(scroll);
       },
@@ -172,7 +171,7 @@
     images.forEach((img) => {
       if (img.complete) {
         loadedCount++;
-        console.log(loadedCount);
+        console.log(loadedCount, "image Ready");
       } else {
         img.onload = () => {
           loadedCount++;
@@ -204,7 +203,6 @@
 
   showSplashScreen();
   document.addEventListener("DOMContentLoaded", function (t) {
-    // e();
     e("dolly_first");
     var b = document.getElementsByTagName("BODY")[0];
 
