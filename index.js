@@ -60,27 +60,81 @@
       } else {
         $(".title-s2").css("opacity", "0");
       }
-      if (scroll >= 2400) {
+      if (scroll <= 0) {
+        $(".example").css("opacity", "0");
+      } else {
         $(".example").css("opacity", "1");
       }
+      let objPurple = $(".purple");
+      let objCloud = $(".cloud");
+      objPurple.css("left", scroll / 100 + "%");
+      objCloud.css("top", 35 + scroll / 150 + "%");
     },
     dolly_second: function (scroll) {
-      let cloudsSky = document.querySelector(".cloudsSky");
-      let spaceship = document.querySelector(".c_space");
-      if (scroll >= 2400) {
-        spaceship.style.top = 50 - scroll / 100 + "%";
-        $(".second_title").css("opacity", "1");
+      console.log(scroll);
+      let cloudsSky = $(".cloudsSky");
+      let spaceship = $(".c_space");
+      let Logo = $(".logoScene3");
+
+      if (window.innerWidth <= 681) {
+        if (scroll >= 2400) {
+          spaceship.css("top", 85 - scroll / 50 + "%");
+          $(".second_title").css("opacity", "1");
+        } else {
+          spaceship.css("top", 85 - scroll / 50 + "%");
+          $(".second_title").css("opacity", "0");
+        }
+
+        Logo.css("left", -35 + scroll / 120 + "%");
       } else {
-        spaceship.style.top = 50 - scroll / 100 + "%";
-        $(".second_title").css("opacity", "0");
+        if (scroll >= 2400) {
+          // $(".hidden").css("opacity", "0");
+          spaceship.css("top", 50 - scroll / 70 + "%");
+          $(".second_title").css("opacity", "1");
+        } else {
+          // $(".hidden").css("opacity", "0");
+          spaceship.css("top", 50 - scroll / 70 + "%");
+          $(".second_title").css("opacity", "0");
+        }
+
+        Logo.css("left", -35 + scroll / 120 + "%");
+        cloudsSky.css("transform", `translateX(${-scroll * 0.1}px)`);
       }
-      cloudsSky.style.transform = `translateX(${-scroll * 0.1}px)`;
     },
     dolly_third: function (scroll) {
+      let frontImg = $(".ls3");
+      let kBlue = $(".ls4");
+      // let Logo = $(".#p3scene3 layer");
       if (scroll >= 1400) {
-        $(".second_title").css("opacity", "1");
+        $(".p4Title").css("opacity", "1");
       } else {
-        $(".second_title").css("opacity", "0");
+        $(".p4Title").css("opacity", "0");
+      }
+
+      if (window.innerWidth <= 681) {
+        if (scroll >= 2400) {
+          frontImg.css("bottom", -50 + scroll / 34 + "%");
+          // kBlue.css(
+          //   "transform",
+          //   `translate3d(-150%, -170%,${-862 - scroll * 0.1} + px)`
+          // );
+          // $(".second_title").css("opacity", "1");
+        } else {
+          // frontImg.css("bottom", -50 + scroll / 60 + "%");
+          // kBlue.css(
+          //   "transform",
+          //   `translate3d(-150%, -170%,${-862 - scroll * 0.1} + px)`
+          // );
+          // $(".second_title").css("opacity", "0");
+        }
+        // if (scroll >= 4000) {
+        //   $(".hidden").css("opacity", "1");
+        // } else {
+        //   $(".hidden").css("opacity", "0");
+        // }
+        // Logo.css("left", -35 + scroll / 120 + "%");
+      } else {
+        // Logo.css("left", -35 + scroll / 120 + "%");
       }
     },
   };
@@ -94,9 +148,9 @@
       return;
     }
 
-    (t = "click" == n.touchClick ? 0.08 : 0.08), console.log(t, "t");
-    (n.dolly = new Dolly(document.getElementById(dollyId), {
-      ease: t,
+    // (t = "click" == n.touchClick ? 0.08 : 0.08), console.log(t, "t");
+    const dollyInstance = new Dolly(document.getElementById(dollyId), {
+      ease: 0.1,
       perspective: 1700,
       distance: 1800,
       fullpage: true,
@@ -119,34 +173,32 @@
         );
       },
       onResize: function (prev, index, scroll) {},
-    })),
-      window.addEventListener("resize", s),
-      s();
+    });
+    // window.addEventListener("resize", s),
+    // s();
   }
 
-  function s() {
-    if (window.innerWidth < 991)
-      for (let t = 0; t < n.mobileBtn.length; t++)
-        n.mobileBtn[t].addEventListener(n.touchClick, i);
-    else
-      for (let t = 0; t < n.mobileBtn.length; t++)
-        n.mobileBtn[t].removeEventListener(n.touchClick, i);
-  }
-
+  // function s() {
+  //   if (window.innerWidth < 991)
+  //     for (let t = 0; t < n.mobileBtn.length; t++)
+  //       n.mobileBtn[t].addEventListener(n.touchClick, i);
+  //   else
+  //     for (let t = 0; t < n.mobileBtn.length; t++)
+  //       n.mobileBtn[t].removeEventListener(n.touchClick, i);
+  // }
+  $(".changeBg").css("background-image", "url('./png/scene1/bk-1.jpg')");
   $("#testClick").on("click", function () {
     $("#dolly_first").fadeOut("slow", function () {
-      // $(this).css("transform", "scale(1.8)");
       $(".changeBg").animate({ opacity: 0 }, "slow", function () {
         $(this).css("background-image", "url('./png/scene2/bk-2.jpg')");
         $(this).animate({ opacity: 1 }, "slow");
+        $("#dolly_first").remove();
       });
     });
 
     setTimeout(function () {
-      $("#dolly_first").hide();
-      $("#dolly_second").fadeIn("slow", function () {
-        $(this).css("transform", "scale(1)");
-      });
+      // $("#dolly_first").hide();
+      $("#dolly_second").fadeIn();
       e("dolly_second");
     }, 1000);
   });
@@ -155,13 +207,12 @@
       $(".changeBg").animate({ opacity: 0 }, "slow", function () {
         $(this).css("background-image", "url('./png/scene3/bk-3.jpg')");
         $(this).animate({ opacity: 1 }, "slow");
+        $("#dolly_second").remove();
       });
     });
     setTimeout(function () {
-      $("#dolly_second").hide();
-      $("#dolly_third").fadeIn("slow", function () {
-        // $(this).css("transform", "scale(1)");
-      });
+      // $("#dolly_second").hide();
+      $("#dolly_third").fadeIn();
       e("dolly_third");
     }, 1000);
   });
@@ -190,16 +241,15 @@
   }
 
   function showSplashScreen() {
-    const splashScreen = document.getElementById("splashScreen");
-    splashScreen.style.display = "flex";
+    $("#splashScreen").show();
+
     setTimeout(() => {
       checkImagesLoaded();
     }, 1500);
   }
 
   function hideSplashScreen() {
-    const splashScreen = document.getElementById("splashScreen");
-    splashScreen.style.display = "none";
+    $("#splashScreen").hide();
   }
 
   showSplashScreen();
